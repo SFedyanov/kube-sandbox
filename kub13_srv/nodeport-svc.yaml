@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: httpd-node-svc
+spec:
+  type: NodePort
+  selector:
+    app: httpd
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

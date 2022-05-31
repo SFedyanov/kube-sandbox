@@ -1,0 +1,6 @@
+test
+config
+file
+key=value1
+[init]
+service = 716b36073a90c6fe1d445ac1af85f4777c5b7a155cea359961826a030513e448
