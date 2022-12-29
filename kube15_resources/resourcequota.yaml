@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: cpu-and-mem
+  namespace: default
+spec:
+  hard:
+    limits.cpu: '4'
+    limits.memory: 16Gi
