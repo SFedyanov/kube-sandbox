@@ -32,4 +32,8 @@ $ oc get pods
 $ oc get podset podset-sample -o yaml
 $ oc patch podset podset-sample --type='json' -p '[{"op": "replace", "path": "/spec/replicas", "value":5}]'
 $ oc get pods
+##
+$ oc get pods -o yaml | grep ownerReferences -A10
+oc delete podset podset-sample
+oc get pods
 ```
