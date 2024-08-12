@@ -1,0 +1,8 @@
+apiVersion: fedyanov.com/v1
+kind: Item
+metadata:
+  name: item1
+spec:
+  itemName: "tv"
+  itemDescription: "tv in badroom"
+  itemScore: "52"

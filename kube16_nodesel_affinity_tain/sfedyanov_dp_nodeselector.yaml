@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sfedyanov
+  labels:
+    app: sfedyanov
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sfedyanov
+  template:
+    metadata:
+      labels:
+        app: sfedyanov
+    spec:
+      nodeSelector:
+        user: sfedyanov
+        kubernetes.io/hostname: vegman-t1
+      containers:
+        - name: sfedyanov
+          image: s3/s3cli-tools:0.0.6
+          command: 
+            - sleep
+          args:
+            - infinity
+          env:
+            - name: MC_HOST_s3
+              value: "http://sfedyanov-test:sfedyanov-test@minio-gateway.seaweedfs"
+          volumeMounts:
+            - name: mc-config            
+              mountPath: "/.mc"
+      volumes:
+        - name: mc-config
+          mountPath:  /.mc
+          emptyDir: {} 
+
